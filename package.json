@@ -1,0 +1,24 @@
+{
+  "name": "own",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "changeset": "changeset",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "ci:release": "turbo build -F @repo/ui && changeset publish",
+    "ci:version": "changeset version && pnpm i --no-frozen-lockfile"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "prettier": "^3.1.0",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
